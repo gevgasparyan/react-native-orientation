@@ -31,7 +31,7 @@ static UIInterfaceOrientationMask _orientation = UIInterfaceOrientationMaskAllBu
 
 - (void)dealloc
 {
-  [[NSNotificationCenter defaultCenter] removeObserver:self];
+  // [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 + (BOOL)requiresMainQueueSetup
@@ -96,6 +96,14 @@ static UIInterfaceOrientationMask _orientation = UIInterfaceOrientationMaskAllBu
   switch (orientation) {
     case UIDeviceOrientationPortrait:
       orientationStr = @"PORTRAIT";
+      break;
+
+    case UIDeviceOrientationFaceUp:
+      orientationStr = @"FACEUP";
+      break;
+
+    case UIDeviceOrientationFaceDown:
+      orientationStr = @"FACEDOWN";
       break;
 
     case UIDeviceOrientationLandscapeLeft:
